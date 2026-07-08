@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIMP - Sistema de Gestão Completa</title>
+    <!-- Vincula o arquivo CSS que dará cor ao site -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilo.css') }}" />
+  </head>
+  <body>
+    <!-- 1. TOPO / CABEÇALHO -->
+    <header>
+      <div class="container">
+        <h1>SISTEMA SIMP</h1>
+        <p>Mais de 15 anos de credibilidade no mercado Amazonense</p>
+      </div>
+    </header>
+
+    <!-- 2. APRESENTAÇÃO PRINCIPAL -->
+    <section class="banner">
+      <h2>Gestão Completa para sua Loja ou Empresa</h2>
+      <p>
+        Automatize seu negócio de varejo e atacado com quem entende do assunto.
+      </p>
+      <!-- Link direto para o seu WhatsApp comercial -->
+      <a href="https://wa.me" target="_blank" class="botao-whatsapp">
+        Fale Conosco no WhatsApp
+      </a>
+    </section>
+
+    <!-- 3. GALERIA DE TELAS DO ERP -->
+    <section class="recursos">
+      <h2>Conheça o Sistema por Dentro</h2>
+      <p class="subtitulo-secao">
+        Conheça os módulos e recursos que o SIMP oferece para sua empresa
+      </p>
+
+      <div class="galeria">
+        <!-- Quadro 1: PDV Caixa -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/vendas caixa pdv .png') }}"
+              alt="Frente de Caixa SIMP" />
+          </div>
+          <h3>PDV Fácil & Emissor</h3>
+          <p>
+            Interface intuitiva para realizar vendas no varejo ou atacado em
+            poucos segundos.
+          </p>
+        </div>
+
+        <!-- Quadro 2: Produtos e Serviços -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/tela de produtos e servicos.png') }}"
+              alt="Cadastro de Produtos" />
+          </div>
+          <h3>Controle de Estoque Avançado</h3>
+          <p>
+            Monitore suas mercadorias em tempo real e saiba exatamente quando
+            repor produtos.
+          </p>
+        </div>
+
+        <!-- Quadro 3: Tela Principal -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/telaprincipal.png') }}"
+              alt="Painel Principal SIMP" />
+          </div>
+          <h3>Painel de Gestão Central</h3>
+          <p>
+            Visão clara e completa de todas as operações e movimentações do seu
+            sistema.
+          </p>
+        </div>
+
+        <!-- Quadro 4: Tela de Orçamento (NOVO) -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/tela de oçamento .png') }}"
+              alt="Tela de Orçamentos" />
+          </div>
+          <h3>Orçamentos Rápidos</h3>
+          <p>
+            Crie propostas e ordens de orçamento detalhadas para seus clientes
+            com extrema rapidez.
+          </p>
+        </div>
+
+        <!-- Quadro 5: Cadastro de Clientes (NOVO) -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/telacliente.png') }}"
+              alt="Cadastro de Clientes" />
+          </div>
+          <h3>Gestão de Clientes</h3>
+          <p>
+            Mantenha um histórico organizado de dados e contatos de quem compra
+            com você.
+          </p>
+        </div>
+
+        <!-- Quadro 6: Vendas Distribuidoras (NOVO) -->
+        <div class="card-tela">
+          <div class="moldura-foto">
+            <img
+              src="{{ url_for('static', filename='imagens/vendas distribuidoras .png') }}"
+              alt="Módulo Distribuidoras" />
+          </div>
+          <h3>Módulo Distribuidoras</h3>
+          <p>
+            Ferramenta sob medida para gerenciar vendas em atacado e grandes
+            volumes de distribuição.
+          </p>
+        </div>
+      </div>
+    </section>
+
+        </section>
+
+        <!-- 4. SEÇÃO DE VÍDEOS DE DEMONSTRAÇÃO (MODO FÁCIL) -->
+    <section class="secao-videos">
+        <h2>O SIMP em Ação</h2>
+        <p class="subtitulo-secao">Clique nos blocos abaixo para assistir às demonstrações práticas direto no YouTube</p>
+        
+        <div class="grade-videos">
+            
+            <!-- Link do Vídeo 1 -->
+            <a href="https://youtube.com" target="_blank" class="card-video-link">
+                <div class="moldura-video-link">
+                    <!-- Usando o print do seu painel principal como capa do vídeo -->
+                    <img src="{{ url_for('static', filename='imagens/telaprincipal.png') }}" alt="Demonstração SIMP">
+                    <div class="botao-play-visual">▶</div>
+                </div>
+                <div class="texto-video-card">
+                    <h3>Assista: Módulos Operacionais</h3>
+                    <p>Veja em detalhes o funcionamento prático das ferramentas e rotinas do sistema SIMP. (Abre no YouTube)</p>
+                </div>
+            </a>
+
+            <!-- Link do Vídeo 2 -->
+            <a href="https://youtube.com" target="_blank" class="card-video-link">
+                <div class="moldura-video-link">
+                    <!-- Usando o print das vendas como capa do vídeo -->
+                    <img src="{{ url_for('static', filename='imagens/vendas caixa pdv .png') }}" alt="Demonstração PDV SIMP">
+                    <div class="botao-play-visual">▶</div>
+                </div>
+                <div class="texto-video-card">
+                    <h3>Assista: Recursos do ERP</h3>
+                    <p>Entenda como a automação comercial do SIMP melhora o dia a dia da sua empresa. (Abre no YouTube)</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+         <!-- 5. RODAPÉ INSTITUCIONAL COM MAPA -->
+    <footer>
+        <div class="container-rodape">
+            
+            <!-- Bloco do Mapa Interativo -->
+                        <!-- Bloco do Mapa Interativo Real da Alvorada -->
+                        <!-- Bloco do Mapa Seguro com Imagem Real -->
+            <div class="bloco-mapa">
+                <h3>Nossa Localização (Alvorada)</h3>
+                <!-- O link oficial que você enviou abre ao clicar na imagem -->
+                <a href="https://google.com" target="_blank" class="link-mapa-imagem">
+                    <div class="moldura-mapa">
+                        <img src="{{ url_for('static', filename='imagens/mapadeManaus.png') }}" alt="Mapa Rua Loris Cordovil SIMP">
+                        <div class="tarja-mapa">Clique para abrir no Google Maps 📍</div>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <!-- Bloco de Contatos -->
+            <div class="bloco-contatos">
+                <h2>SIMP Sistemas de Gestão</h2>
+                <p class="tagline">Atendimento Diferenciado | Desenvolvedor Prontamente a Serviço</p>
+                <div class="telefones">
+                    <p><strong>📞 Telefone Fixo:</strong> (92) 3028-1000</p>
+                    <p><strong>📱 Plantão Comercial 1:</strong> (92) 99221-1893</p>
+                    <p><strong>📱 Plantão Comercial 2:</strong> (92) 9963-2063</p>
+                </div>
+                <p class="direitos">© 2026 SIMP Sistemas. Todos os direitos reservados. Orgulhosamente desenvolvido no Amazonas.</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    
