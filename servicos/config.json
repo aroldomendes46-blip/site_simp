@@ -1,0 +1,164 @@
+{
+    "EMPRESA": {
+        "nome": "BRASIL CONTROLE DE PRAGAS",
+        "razao_social": "BRASIL IMUNIZACAO E CONTROLE DE PRAGAS LTDA",
+        "nome_fantasia": "BRASIL CONTROLE DE PRAGAS",
+        "cnpj": "68.303.963/0001-06",
+        "inscricao_municipal": "742628001",
+        "cnae": "8129-0/00.99",
+        "endereco": "RUA LORIS CORDOVIL, 92 - SALA: 02",
+        "bairro": "ALVORADA 1",
+        "cep": "69043-010",
+        "cidade_uf": "Manaus / AM",
+        "telefone": "(92) 993028-1000 / (92)99221-1893 / (92) 99382-6233",
+        "whatsapp": "5592992211893",
+        "lat": "-3.0803046",
+        "lng": "-60.0407661",
+        "email": "brasipragas2018@gmail.com",
+        "logo_path": "D:/SIMPSISTEMA/DATASIMP_WINDOWS/logo/logo_recibo.jpg"
+    },
+    "EMPRESA_2": {
+        "nome": "VILA DA BARRA SERVIÇOS",
+        "razao_social": "VILA DA BARRA SERVIÇOS DE DEDETIZAÇÃO LTDA.",
+        "nome_fantasia": "VILA DA BARRA SERVIÇOS",
+        "cnpj": "00.492.578/0001-02",
+        "inscricao_municipal": "69.952.01",
+        "cnae": "8129-0/00.99",
+        "endereco": "Rua. Canário",
+        "numero": "27",
+        "bairro": "Quadra 52 - Cond. Cidade Nova I",
+        "cep": "69.095-040",
+        "cidade_uf": "Manaus / AM",
+        "telefone": "(92) 99170-9310",
+        "whatsapp": "5592991709310",
+        "lat": "-3.0274425",
+        "lng": "-59.9830799",
+        "email": "viladabarradd@gmail.com",
+        "logo_path": "D:/SIMPSISTEMA/DATASIMP_WINDOWS/logo/logo_vila.png",
+        "registro_dvisa": "S1321"
+    },
+    "EMPRESA_3": {
+        "nome": "",
+        "razao_social": "",
+        "nome_fantasia": "",
+        "cnpj": "",
+        "inscricao_municipal": "",
+        "cnae": "",
+        "endereco": "",
+        "numero": "",
+        "bairro": "",
+        "cep": "",
+        "cidade_uf": "",
+        "telefone": "",
+        "email": "",
+        "logo_path": ""
+    },
+    "PIX": {
+        "chave": "68303963000106",
+        "cidade_recebedor": "MANAUS"
+    },
+    "DESIGN_PDF": {
+        "cor_linhas": "#4B5563",
+        "espessura_linhas": 0.1,
+        "cor_titulo_barra": "#1E3A8A",
+        "cor_secao_barra": "#374151"
+    },
+    "SISTEMA_TELA": {
+        "cor_fundo_janela": "#111827",
+        "cor_texto_titulos": "#FFFFFF",
+        "cor_texto_labels": "#9CA3AF",
+        "cor_fundo_botoes": "#1F2937",
+        "cor_texto_botoes": "#FFFFFF",
+        "tabela_linha_par": "#1F2937",
+        "tabela_linha_impar": "#111827",
+        "tabela_selecao": "#3B82F6",
+        "tabela_texto": "white"
+    },
+    "PERFIL_LOJA": {
+        "nome_loja": "",
+        "banco": "",
+        "mostrar_ocultos": false,
+        "perfis": {
+            "loja1_controle_pragas": {
+                "ativo": true,
+                "nome": "BRASIL CONTROLE DE PRAGAS",
+                "cor": "#00B37E",
+                "banco": "datasimp.db",
+                "ocultos": [
+                    "mp_caixa",
+                    "mp_compras",
+                    "mp_funcionarios",
+                    "mp_vendedores",
+                    "mp_orcamentos",
+                    "mp_financeiro",
+                    "mp_relatorios"
+                ]
+            },
+            "loja2_moto_pecas": {
+                "ativo": false,
+                "nome": "Moto Peças",
+                "cor": "#3B82F6",
+                "banco": "moto_pecas.db",
+                "ocultos": [
+                    "rotas",
+                    "vencimentos"
+                ]
+            },
+            "loja3_vila_da_barra": {
+                "ativo": false,
+                "nome": "VILA DA BARRA SERVIÇOS",
+                "cor": "#9C9C9C",
+                "banco": "vila_da_barra.db",
+                "empresa_config": "EMPRESA_2",
+                "ocultos": [
+                    "mp_caixa",
+                    "mp_compras",
+                    "mp_funcionarios",
+                    "mp_vendedores",
+                    "mp_orcamentos",
+                    "mp_financeiro",
+                    "mp_relatorios"
+                ]
+            },
+            "loja4_roupas": {
+                "ativo": false,
+                "nome": "Roupas",
+                "cor": "#8B5CF6",
+                "banco": "roupas.db",
+                "ocultos": [
+                    "rotas",
+                    "vencimentos"
+                ]
+            },
+            "loja5_brinquedos": {
+                "ativo": false,
+                "nome": "Brinquedos",
+                "cor": "#F59E0B",
+                "banco": "brinquedos.db",
+                "ocultos": [
+                    "rotas",
+                    "vencimentos"
+                ]
+            },
+            "loja6_nova": {
+                "ativo": false,
+                "nome": "Nova Loja",
+                "cor": "#EC4899",
+                "banco": "nova_loja.db",
+                "empresa_config": "EMPRESA_3",
+                "ocultos": []
+            }
+        }
+    },
+    "ASSINATURA": {
+        "responsavel": "AROLDO MENDES",
+        "cargo": "Responsável/Tec Administrativo",
+        "local": "Manaus / AM",
+        "caminho_imagem": "D:\\SIMPSISTEMA\\fotos\\assinatura_orçamento.jpg"
+    },
+    "LICENCA": {
+        "data_validade": "22/10/2026",
+        "data_ativacao": "22/08/2026 19:36:31",
+        "hash_verificacao": "6759776a4de4e1799c4a2bef5e8b9d0d0ec6e5f755a424735ff4fb16431026f8"
+    }
+}

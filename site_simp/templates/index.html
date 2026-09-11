@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ empresa }} | Controle de Pragas em {{ cd }}-{{ uf }}</title>
+    <meta
+      name="description"
+      content="Controle de pragas em {{ cd }}-{{ uf }}: ratos, baratas, formigas, cupins, escorpiões e mais. Orçamento ágil pelo WhatsApp {{ telefone }}." />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilo.css') }}" />
+  </head>
+  <body>
+    <!-- TOPO -->
+    <header class="topo">
+      <div class="topo-interno">
+        <a href="#inicio" class="marca">
+          {% if has_logo %}
+          <img
+            src="{{ url_for('static', filename='imagens/logo_site.png') }}"
+            alt="Logo {{ empresa }}"
+            class="logo-topo" />
+          {% else %}
+          <span class="logo-placeholder">{{ iniciais }}</span>
+          {% endif %}
+          <div>
+            <h1>{{ empresa }}</h1>
+            <p>{{ cd }} e região — atendimento profissional</p>
+          </div>
+        </a>
+<nav class="nav-menu">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#diferenciais-tecnicos">Diferenciais Técnicos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <a
+          href="{{ wa_geral }}"
+          target="_blank"
+          rel="noopener"
+          class="btn-whatsapp">
+          💬 WhatsApp: {{ telefone }}
+        </a>
+        <button class="btn-menu-mobile" id="btnMenuMobile" aria-label="Abrir menu">☰</button>
+      </div>
+      <nav class="nav-mobile" id="navMobile">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#diferenciais-tecnicos">Diferenciais Técnicos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-interno">
+        <div>
+          <h2>
+            Controle de Pragas em {{ cd }} com
+            <span>profissionalismo e segurança</span>
+          </h2>
+          <p class="hero-texto">
+            Eliminamos ratos, baratas, formigas, cupins, escorpiões e outras
+            pragas com agilidade, produtos seguros e atendimento para
+            residências, condomínios e empresas.
+          </p>
+          <div class="hero-acoes">
+            <a
+              href="{{ wa_geral }}"
+              target="_blank"
+              rel="noopener"
+              class="btn-primario">
+              📲 Solicitar orçamento pelo WhatsApp
+            </a>
+            <a href="#servicos" class="btn-secundario">Conheça nossos serviços</a>
+          </div>
+          <div class="hero-selos">
+            <span class="selo">⚡ Atendimento rápido</span>
+            <span class="selo">🏠 Residencial e comercial</span>
+            <span class="selo">🛡️ Produtos regulamentados</span>
+          </div>
+        </div>
+        <div class="hero-imagem">
+          <div class="slider" id="slider">
+            {% for arq in slider_imgs %}
+            <div class="slide{% if loop.first %} ativo{% endif %}">
+              <img
+                src="{{ url_for('static', filename='imagens/slider/' + arq) }}"
+                alt="Serviço de dedetização {{ empresa }}" />
+            </div>
+            {% endfor %}
+            <button class="slider-setas seta-ant" id="seta-ant" aria-label="Foto anterior">‹</button>
+            <button class="slider-setas seta-prox" id="seta-prox" aria-label="Próxima foto">›</button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <span class="quadro-selo">🛡️ Serviço profissional</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="secao" id="servicos">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Nossos serviços</span>
+          <h2>Controle profissional para cada tipo de praga</h2>
+          <p>
+            Atendimento para residências, condomínios, empresas e comércios em
+            {{ cd }} e região metropolitana.
+          </p>
+        </div>
+        <div class="grade-servicos">
+          {% for s in servicos %}
+          <div class="card-servico">
+            {% if s.img %}
+            <img src="{{ url_for('static', filename='imagens/' + s.img) }}" alt="{{ s.nome }}" class="card-servico-img" />
+            {% else %}
+            <span class="icone">{{ s.emoji }}</span>
+            {% endif %}
+            <h3>{{ s.nome }}</h3>
+            <p>{{ s.desc }}</p>
+            <a
+              href="{{ s.link }}"
+              target="_blank"
+              rel="noopener">Solicitar orçamento →</a
+            >
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="secao diferenciais" id="diferenciais">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Diferenciais</span>
+          <h2>Por que escolher a {{ empresa }}?</h2>
+          <p>
+            Soluções pensadas para cada necessidade, com agilidade no
+            atendimento em {{ cd }}.
+          </p>
+        </div>
+        <div class="grade-diferenciais">
+          <div class="card-diferencial">
+            <span class="icone">⚡</span>
+            <h3>Atendimento rápido</h3>
+            <p>Resposta ágil para quem precisa resolver o problema com pragas.</p>
+          </div>
+          <div class="card-diferencial">
+            <span class="icone">📲</span>
+            <h3>Orçamento pelo WhatsApp</h3>
+            <p>Solicite seu orçamento de forma simples e rápida.</p>
+          </div>
+          <div class="card-diferencial">
+            <span class="icone">🛡️</span>
+            <h3>Produtos seguros</h3>
+            <p>Utilizamos produtos regulamentados e técnicas responsáveis.</p>
+          </div>
+          <div class="card-diferencial">
+            <span class="icone">👨‍🔧</span>
+            <h3>Equipe qualificada</h3>
+            <p>Profissionais treinados para cada tipo de serviço.</p>
+          </div>
+          <div class="card-diferencial">
+            <span class="icone">🏠</span>
+            <h3>Residencial e comercial</h3>
+            <p>Atendemos casas, condomínios, empresas, comércios e indústrias.</p>
+          </div>
+          <div class="card-diferencial">
+            <span class="icone">📍</span>
+            <h3>{{ cd }} e região</h3>
+            <p>Atendimento em {{ cd }} e região metropolitana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS TÉCNICOS -->
+    <section class="secao tecnicos" id="diferenciais-tecnicos">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Diferenciais técnicos</span>
+          <h2>Soluções especializadas para cada segmento</h2>
+          <p>
+            Atendimento técnico certificado para empresas, alimentício,
+            industrial e residencial, com foco em prevenção e conformidade.
+          </p>
+        </div>
+
+        <div class="tec-bloco">
+          <div class="tec-cab">
+            <span class="tec-emoji">🏢</span>
+            <div>
+              <h3>Corporativo &amp; Comercial</h3>
+              <p>Lojas, escritórios, academias, hotéis</p>
+            </div>
+          </div>
+          <p class="tec-intro">
+            O foco aqui é proteger a reputação da marca, o patrimônio e
+            garantir o bem-estar de colaboradores e clientes.
+          </p>
+          <ul class="tec-lista">
+            <li>
+              <strong>Controle Preventivo de Pragas (Contrato Mensal):</strong>
+              monitoramento contínuo de insetos rasteiros e roedores com
+              emissão de certificados.
+            </li>
+            <li>
+              <strong>Sanitização de Ambientes:</strong>
+              desinfecção de áreas comuns, carpetes e sistemas de
+              ar-condicionado contra vírus, bactérias e fungos (essencial para
+              escritórios e hotéis).
+            </li>
+            <li>
+              <strong>Limpeza e Higienização de Caixas D'água:</strong>
+              execução obrigatória com laudo de potabilidade da água para os
+              funcionários.
+            </li>
+            <li>
+              <strong>Manejo de Pragas Voadoras:</strong>
+              instalação e manutenção de armadilhas luminosas para moscas e
+              mosquitos em recepções ou áreas de convivência.
+            </li>
+          </ul>
+        </div>
+
+        <div class="tec-bloco">
+          <div class="tec-cab">
+            <span class="tec-emoji">🍽️</span>
+            <div>
+              <h3>Setor de Alimentos &amp; Restaurantes</h3>
+              <p>Bares, lanchonetes, supermercados</p>
+            </div>
+          </div>
+          <p class="tec-intro">
+            Neste segmento, o serviço é focado em atender rigidamente às
+            normas da RDC 216 da Anvisa, evitando multas e interdições.
+          </p>
+          <ul class="tec-lista">
+            <li>
+              <strong>Manejo Integrado de Pragas (MIP):</strong>
+              cronograma rigoroso de auditoria, mapeamento de pontos
+              críticos, relatórios técnicos e pastas de documentação para a
+              Vigilância Sanitária.
+            </li>
+            <li>
+              <strong>Desratização com Barreiras Químicas e Físicas:</strong>
+              uso de túneis de captura seguros (porta-iscas com chave) que não
+              contaminam os alimentos.
+            </li>
+            <li>
+              <strong>Limpeza e Desobstrução de Caixas de Gordura:</strong>
+              serviço essencial, pois a gordura acumulada é o principal
+              atrativo para baratas e ratos.
+            </li>
+            <li>
+              <strong>Treinamento de Boas Práticas:</strong>
+              palestras rápidas agregadas para os funcionários do cliente
+              sobre como evitar atrativos para pragas (manejo de lixo, vedação
+              de frestas).
+            </li>
+          </ul>
+        </div>
+
+        <div class="tec-bloco">
+          <div class="tec-cab">
+            <span class="tec-emoji">🏭</span>
+            <div>
+              <h3>Industrial, Logística &amp; Agronegócio</h3>
+              <p>Fábricas, galpões, silos</p>
+            </div>
+          </div>
+          <p class="tec-intro">
+            Processos de alta complexidade focados na proteção de frotas,
+            maquinários, cargas e atendimento a auditorias internacionais
+            (como ISO e BRC).
+          </p>
+          <ul class="tec-lista">
+            <li>
+              <strong>Expurgo e Fumigação:</strong>
+              tratamento de mercadorias, contêineres e silos de grãos para
+              eliminação de pragas de armazenamento.
+            </li>
+            <li>
+              <strong>Descupinização Industrial:</strong>
+              proteção de estruturas de madeira, paletes e proteção de
+              fiações elétricas (evitando curtos-circuitos causados por
+              roedores ou cupins).
+            </li>
+            <li>
+              <strong>Controle Repelente de Pombos e Morcegos:</strong>
+              instalação de telas, fios tensionados e barreiras físicas para
+              impedir o pouso de aves em galpões e telhados.
+            </li>
+            <li>
+              <strong>Controle de Pragas de Jardim e Vetores:</strong>
+              aplicação perimetral em grandes áreas verdes para conter
+              escorpiões, aranhas e mosquitos.
+            </li>
+          </ul>
+        </div>
+
+        <div class="tec-bloco">
+          <div class="tec-cab">
+            <span class="tec-emoji">🏠</span>
+            <div>
+              <h3>Residencial</h3>
+              <p>Casas e condomínios</p>
+            </div>
+          </div>
+          <p class="tec-intro">
+            O foco é a segurança da família, pets e a preservação do imóvel.
+          </p>
+          <ul class="tec-lista">
+            <li>
+              <strong>Dedetização Residencial Premium:</strong>
+              eliminação de baratas, formigas, pulgas e carrapatos utilizando
+              produtos de baixa toxicidade e sem cheiro (seguros para crianças
+              e animais).
+            </li>
+            <li>
+              <strong>Descupinização de Móveis e Telhados:</strong>
+              barreiras químicas localizadas para salvar o patrimônio de
+              madeira do cliente.
+            </li>
+            <li>
+              <strong>Controle de Escorpiões e Aranhas:</strong>
+              varredura técnica e aplicação de microencapsulados em ralos,
+              caixas de passagem e frestas.
+            </li>
+            <li>
+              <strong>Limpeza de Caixas D'água e Cisternas:</strong>
+              recomendada a cada 6 meses para garantir a saúde da água da
+              família.
+            </li>
+          </ul>
+        </div>
+
+        <div class="tec-ouro">
+          <span class="tec-ouro-icone">💡</span>
+          <div>
+            <h3>Diferenciais que você pode esperar da {{ empresa }}</h3>
+            <ul>
+              <li>
+                Certificações e licenças: registro nos órgãos ambientais
+                locais e químicos responsáveis.
+              </li>
+              <li>
+                Químicos de alta performance: produtos registrados na Anvisa,
+                sem cheiro e ecologicamente corretos.
+              </li>
+              <li>
+                Plantão e assistência: garantia de assistência técnica
+                pós-aplicação.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Como funciona</span>
+          <h2>Simples, rápido e sem complicação</h2>
+        </div>
+        <div class="passos">
+          <div class="passo">
+            <span class="numero">1</span>
+            <h3>Entre em contato</h3>
+            <p>
+              Chame no WhatsApp e explique o que está acontecendo no seu
+              ambiente.
+            </p>
+          </div>
+          <div class="passo">
+            <span class="numero">2</span>
+            <h3>Solicite seu orçamento</h3>
+            <p>
+              Nossa equipe orienta sobre o serviço e envia o orçamento com
+              agilidade.
+            </p>
+          </div>
+          <div class="passo">
+            <span class="numero">3</span>
+            <h3>Resolva o problema</h3>
+            <p>
+              Contamos com a profissionalização no controle de pragas para
+              resolver de verdade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGIÃO -->
+    <section class="secao regiao">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Área de atendimento</span>
+          <h2>Atendemos em {{ cidade }}</h2>
+          <p>
+            Cobertura para residências, condomínios, comércios e empresas em
+            diversos bairros de {{ cd }}.
+          </p>
+        </div>
+        <div class="regiao-chips">
+          <span class="chip-regiao">📍 {{ cidade }}</span>
+          <span class="chip-regiao">🏠 Residencial</span>
+          <span class="chip-regiao">🏢 Comercial</span>
+          <span class="chip-regiao">🏬 Condomínios</span>
+          <span class="chip-regiao">🏭 Empresas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao-titulo">
+          <span class="topico">Localização</span>
+          <h2>Onde estamos</h2>
+          <p>{{ endereco }} — {{ bairro }} — {{ cidade }}</p>
+        </div>
+        <div class="mapa-container">
+          <iframe
+            src="https://maps.google.com/maps?q={{ lat }},{{ lng }}&z=16&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;border-radius:var(--raio);"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Precisa eliminar pragas? A Brasil pode ajudar.</h2>
+        <p>
+          Solicite seu orçamento pelo WhatsApp e fale com nossa equipe.
+          Atendimento para residências e empresas em {{ cd }}.
+        </p>
+        <a
+          href="{{ wa_geral }}"
+          target="_blank"
+          rel="noopener"
+          class="btn-primario">
+          📲 Chamar no WhatsApp agora
+        </a>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer id="contato">
+      <div class="container">
+        <div class="rodape-grid">
+          <div class="rodape-col">
+            <div class="rodape-logo">
+              {% if has_logo %}
+              <img
+                src="{{ url_for('static', filename='imagens/logo_site.png') }}"
+                alt="Logo {{ empresa }}" />
+              {% else %}
+              <span class="logo-placeholder">{{ iniciais }}</span>
+              {% endif %}
+              <strong>{{ empresa }}</strong>
+            </div>
+            <p>
+              Controle profissional de pragas em {{ cidade }}, com segurança e
+              produtos regulamentados.
+            </p>
+          </div>
+          <div class="rodape-col">
+            <h3>Navegação</h3>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#diferenciais">Diferenciais</a></li>
+              <li><a href="#diferenciais-tecnicos">Diferenciais Técnicos</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+          <div class="rodape-col">
+            <h3>Contato</h3>
+            <ul>
+              <li>
+                <a
+                  href="{{ wa_contato }}"
+                  target="_blank"
+                  rel="noopener">
+                  💬 WhatsApp: {{ telefone }}
+                </a>
+              </li>
+              <li>📍 {{ cidade }} e região</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rodape-base">
+          © <span id="ano"></span> {{ empresa }}. Todos os direitos
+          reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP (celular) -->
+    <a
+      href="{{ wa_geral }}"
+      target="_blank"
+      rel="noopener"
+      class="btn-flutuante"
+      aria-label="Falar no WhatsApp">
+      💬
+    </a>
+
+    <script>
+      document.getElementById("ano").textContent = new Date().getFullYear();
+
+      var btnMenu = document.getElementById("btnMenuMobile");
+      var navMobile = document.getElementById("navMobile");
+      btnMenu.addEventListener("click", function () {
+        var aberto = navMobile.classList.toggle("aberto");
+        btnMenu.textContent = aberto ? "✕" : "☰";
+      });
+      navMobile
+        .querySelectorAll("a")
+        .forEach(function (link) {
+          link.addEventListener("click", function () {
+            navMobile.classList.remove("aberto");
+            btnMenu.textContent = "☰";
+          });
+        });
+
+      var slides = Array.prototype.slice.call(
+        document.querySelectorAll(".slide")
+      );
+      var dots = document.getElementById("slider-dots");
+      var slideAtual = 0;
+      var timer = null;
+
+      if (slides.length > 1) {
+        slides.forEach(function (_, i) {
+          var b = document.createElement("span");
+          if (i === 0) b.classList.add("ativo");
+          b.addEventListener("click", function () {
+            irPara(i);
+          });
+          dots.appendChild(b);
+        });
+      }
+      var dotEls = dots.children;
+
+      function irPara(n) {
+        if (slides.length === 0) return;
+        slides[slideAtual].classList.remove("ativo");
+        if (dotEls[slideAtual]) dotEls[slideAtual].classList.remove("ativo");
+        slideAtual = (n + slides.length) % slides.length;
+        slides[slideAtual].classList.add("ativo");
+        if (dotEls[slideAtual]) dotEls[slideAtual].classList.add("ativo");
+        reiniciar();
+      }
+
+      function prox() {
+        irPara(slideAtual + 1);
+      }
+
+      function reiniciar() {
+        if (timer) clearInterval(timer);
+        if (slides.length > 1) timer = setInterval(prox, 5000);
+      }
+
+      var setaAnt = document.getElementById("seta-ant");
+      var setaProx = document.getElementById("seta-prox");
+      if (setaAnt) setaAnt.addEventListener("click", function () { irPara(slideAtual - 1); });
+      if (setaProx) setaProx.addEventListener("click", prox);
+
+      reiniciar();
+    </script>
+  </body>
+</html>
