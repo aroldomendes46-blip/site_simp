@@ -1,1 +1,1 @@
-web: gunicorn --chdir site_simp app:app
+web: gunicorn app:app

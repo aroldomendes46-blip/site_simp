@@ -6,7 +6,7 @@ from urllib.parse import quote
 
 from flask import Flask, render_template
 
-BASE_SISTEMA = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_SISTEMA = os.path.dirname(os.path.abspath(__file__))
 if BASE_SISTEMA not in sys.path:
     sys.path.insert(0, BASE_SISTEMA)
 
